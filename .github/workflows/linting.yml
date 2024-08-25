@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: ["*"]
+    branches: ['*']
   merge_group:
 
 jobs:
@@ -11,13 +11,13 @@ jobs:
     name: Prettier and ESLint Checks
     steps:
       - uses: actions/checkout@v4
-        with: 
+        with:
           fetch-depth: 0
       - uses: pnpm/action-setup@v3
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
+          cache: 'pnpm'
       - shell: bash
         run: pnpm install
       - run: pnpm run lint
@@ -33,8 +33,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
+          cache: 'pnpm'
       - shell: bash
         run: pnpm install
 
-      - run: pnpm run typecheck
+      - run: pnpm run check
