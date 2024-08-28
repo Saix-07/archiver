@@ -38,3 +38,19 @@ jobs:
         run: pnpm install
 
       - run: pnpm run check
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    name: Unit Tests
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - shell: bash
+        run: pnpm install
+      - run: pnpm run test
