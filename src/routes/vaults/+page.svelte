@@ -2,15 +2,15 @@
   import type { PageServerData } from './$types';
   import userSettings from '$lib/stores/userSettings';
   import Button from '$lib/components/ui/button/button.svelte';
-  import { goto } from '$app/navigation';
+  // import { goto } from '$app/navigation';
   import { enhance } from '$app/forms';
 
   export let data: PageServerData;
 
-  function selectVault(vault: Awaited<PageServerData['vaults']>[number]) {
-    $userSettings.selectedVault = vault;
-    goto('/posts');
-  }
+  // function selectVault(vault: Awaited<PageServerData['vaults']>[number]) {
+  //   $userSettings.selectedVault = vault;
+  //   goto('/posts');
+  // }
 </script>
 
 <h1>Vaults</h1>

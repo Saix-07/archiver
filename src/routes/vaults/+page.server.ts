@@ -13,9 +13,9 @@ export const actions: Actions = {
     console.log('action!');
 
     cookies.set('selectedVault', '0', {
-      path: '/'
-    })
+      path: '/',
+    });
 
-    return redirect(301, '/posts')
-  }
-}
+    return redirect(301, '/posts');
+  },
+};
