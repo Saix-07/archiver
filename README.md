@@ -9,7 +9,7 @@ this, so don't expect a lot of updates
 - [ ] Backend API
 - [ ] UI
   - [ ] Add PostCSS
-- [ ] Docker builds
+- [x] Docker builds
 - [ ] CI
   - [x] Linting
   - [ ] Builds
