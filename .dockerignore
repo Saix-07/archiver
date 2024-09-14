@@ -1,0 +1,14 @@
+.github
+.svelte-kit
+.vscode
+node_modules
+test-vaults/
+.npmrc
+eslint.config.js
+.prettierignore
+LICENSE
+.git
+.gitignore
+*.md
+dist
+build
