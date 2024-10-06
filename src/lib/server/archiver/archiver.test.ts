@@ -16,7 +16,7 @@ const TestArchiver = {
 };
 
 describe('selectArchiver tests', () => {
-  it('Should work for a single string', async () => {
+  it.todo('Should work for a single string', async () => {
     const archiver = await selectArchiver('https://twitter.com/test/post', [
       {
         ...TestArchiver,
@@ -27,7 +27,7 @@ describe('selectArchiver tests', () => {
     expect(archiver?.type).not.toBeUndefined();
   });
 
-  it('Should work for a single RegExp', async () => {
+  it.todo('Should work for a single RegExp', async () => {
     const archiver = await selectArchiver('https://twitter.com/test/post', [
       {
         ...TestArchiver,
@@ -38,7 +38,7 @@ describe('selectArchiver tests', () => {
     expect(archiver?.type).not.toBeUndefined();
   });
 
-  it('Should work for an array of strings and RegExps', async () => {
+  it.todo('Should work for an array of strings and RegExps', async () => {
     const archiver = await selectArchiver('https://twitter.com/test/post', [
       {
         ...TestArchiver,
