@@ -18,14 +18,20 @@ const [author1, author2, author3] = await prisma.postAuthor.createManyAndReturn(
     {
       name: 'Test Author 1',
       vaultId: vault1.id,
+      handlesArrayLike: '',
+      profileUrlsArrayLike: '',
     },
     {
       name: 'Test Author 2',
       vaultId: vault1.id,
+      handlesArrayLike: '',
+      profileUrlsArrayLike: '',
     },
     {
       name: 'Test Author 3',
       vaultId: vault2.id,
+      handlesArrayLike: '',
+      profileUrlsArrayLike: '',
     },
   ],
 });

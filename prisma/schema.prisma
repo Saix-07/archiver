@@ -22,10 +22,13 @@ model Vault {
 }
 
 model Post {
-  id      Int     @id @default(autoincrement())
-  vault   Vault   @relation(fields: [vaultId], references: [id])
+  id      Int   @id @default(autoincrement())
+  vault   Vault @relation(fields: [vaultId], references: [id])
   vaultId Int
-  media   Media[]
+
+  postBody    String? // The contents of the post
+  postSpoiler String? // Fediverse Posts may contain a CW
+  media       Media[]
 
   author       PostAuthor @relation(fields: [postAuthorId], references: [id])
   postAuthorId Int
@@ -52,10 +55,13 @@ model Media {
 }
 
 model PostAuthor {
-  id      Int    @id @default(autoincrement())
-  vault   Vault  @relation(fields: [vaultId], references: [id])
+  id      Int   @id @default(autoincrement())
+  vault   Vault @relation(fields: [vaultId], references: [id])
   vaultId Int
-  name    String
+
+  name                 String
+  handlesArrayLike     String
+  profileUrlsArrayLike String
 
   profilePictureSlug    String?
   profilePictureMedia   Media?  @relation(fields: [profilePictureMediaId], references: [id])
