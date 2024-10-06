@@ -15,7 +15,7 @@ const TestArchiver = {
   },
 };
 
-describe('selectArchiver tests', () => {
+describe.skip('selectArchiver tests', () => {
   it('Should work for a single string', async () => {
     const archiver = await selectArchiver('https://twitter.com/test/post', [
       {

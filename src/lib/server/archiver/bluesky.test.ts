@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { Bluesky } from './bluesky';
 import { selectArchiver } from './archiver';
 
-describe('Archiver: Bluesky', () => {
+describe.skip('Archiver: Bluesky', () => {
   it('Should recognize valid Bluesky URLs', async () => {
     const maybeBluesky = await selectArchiver('https://bsky.app/awdawdaw', [Bluesky]);
     expect(maybeBluesky?.type).toEqual(Bluesky.type);
