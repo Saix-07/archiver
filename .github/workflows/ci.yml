@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: ['*']
+  repository_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Prettier and ESLint Checks
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: './.github/actions/setup-ci'
+
+      - name: Run linter
+        run: pnpm run lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    name: Typecheck
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: './.github/actions/setup-ci'
+
+      - name: Typecheck
+        run: pnpm run check
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    name: Tests
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: './.github/actions/setup-ci'
+
+      - name: Run Tests
+        run: pnpm run test

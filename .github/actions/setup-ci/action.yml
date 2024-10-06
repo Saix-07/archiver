@@ -1,0 +1,12 @@
+name: Setup CI/CD
+description: Boilerplate for CI/CD actions
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v3
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 'package.json' # Uses package.json `engines.node` version
+        cache: 'pnpm'
+    - shell: bash
+      run: pnpm install --frozen-lockfile
