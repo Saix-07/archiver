@@ -1,13 +1,13 @@
 import { AtpAgent } from '@atproto/api';
-import { ArchiverTypes, type Archiver } from './archiver';
 import { z } from 'zod';
+import { type Archiver, ArchiverTypes } from './archiver';
 
 const atpAgent = new AtpAgent({
   service: new URL('https://public.api.bsky.app/'),
 });
 
 class BlueskyError extends Error {
-  override name: string = 'BlueskyError';
+  override name = 'BlueskyError';
 }
 
 export const Bluesky = {

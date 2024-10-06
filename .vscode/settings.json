@@ -1,6 +1,12 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "biomejs.biome",
+  "biome.enabled": true,
+  "eslint.enable": false,
+  "prettier.enable": false,
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit"
+  }
 }

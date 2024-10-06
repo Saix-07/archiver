@@ -1,6 +1,6 @@
 import type { Prisma, Vault } from '@prisma/client';
-import { prismaClient } from './prisma';
 import { deletePostsByVault } from './posts';
+import { prismaClient } from './prisma';
 
 export type VaultId = Vault['id'];
 

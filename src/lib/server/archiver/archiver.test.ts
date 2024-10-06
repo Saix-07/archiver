@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { selectArchiver } from './archiver';
+import { describe, expect, it } from 'vitest';
+import { type Archiver, selectArchiver } from './archiver';
 
 const TestArchiver = {
   type: 'TWITTER' as const,
@@ -7,13 +7,22 @@ const TestArchiver = {
     return {
       service: 'TWITTER' as const,
       media: [],
+      post: {
+        postBody: '',
+        postSpoiler: '',
+        sourceUrl: '',
+      },
       author: {
         name: 'asdf',
         authorUrl: '',
+        handle: '',
       },
     };
   },
-};
+} satisfies Omit<Archiver, 'urlPatterns'>;
+
+const twitStar = /twit.*\.com/;
+const thisShouldntMatch = /this shouldnt match/;
 
 describe.skip('selectArchiver tests', () => {
   it('Should work for a single string', async () => {
@@ -31,7 +40,7 @@ describe.skip('selectArchiver tests', () => {
     const archiver = await selectArchiver('https://twitter.com/test/post', [
       {
         ...TestArchiver,
-        urlPatterns: /twit.*\.com/,
+        urlPatterns: twitStar,
       },
     ]);
 
@@ -42,7 +51,7 @@ describe.skip('selectArchiver tests', () => {
     const archiver = await selectArchiver('https://twitter.com/test/post', [
       {
         ...TestArchiver,
-        urlPatterns: ['twitter.com', /this shouldnt match/],
+        urlPatterns: ['twitter.com', thisShouldntMatch],
       },
     ]);
 

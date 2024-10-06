@@ -1,7 +1,7 @@
+import { Bluesky } from '$lib/server/archiver/bluesky';
+import { createPost } from '$lib/server/prisma/posts';
 import { getVaults } from '$lib/server/prisma/vaults';
 import type { PageServerLoad } from './$types';
-import { Bluesky, getPost } from '$lib/server/archiver/bluesky';
-import { createPost } from '$lib/server/prisma/posts';
 
 export const load = (() => {
   return {

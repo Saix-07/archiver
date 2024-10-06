@@ -1,4 +1,4 @@
-import { type Schema } from 'zod';
+import type { Schema } from 'zod';
 
 export function getArrayLikeFromPrismaField<T extends string | number>(
   prismaValue: string | null | undefined,

@@ -1,6 +1,6 @@
-import type { Prisma, Post, Media, PostAuthor } from '@prisma/client';
-import { prismaClient } from '../prisma';
+import type { Media, Post, PostAuthor, Prisma } from '@prisma/client';
 import { getPostAuthorIdFromHandle } from '../prisma/post-authors';
+import { prismaClient } from '../prisma/prisma';
 
 export const ArchiverTypes = {
   TWITTER: 'TWITTER',

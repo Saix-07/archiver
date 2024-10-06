@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'vitest';
-import { Bluesky } from './bluesky';
+import { describe, expect, it } from 'vitest';
 import { selectArchiver } from './archiver';
+import { Bluesky } from './bluesky';
 
 describe.skip('Archiver: Bluesky', () => {
   it('Should recognize valid Bluesky URLs', async () => {
